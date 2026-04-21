@@ -1,6 +1,8 @@
 import { z } from 'zod';
 
-const PROXY_URL = '/api/proxy';
+const PROXY_URL = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api/proxy`
+  : '/api/proxy';
 
 const apiErrorSchema = z.object({
   error: z.string(),

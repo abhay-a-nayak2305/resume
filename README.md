@@ -59,8 +59,9 @@ The backend is a high-performance Worker built with **Hono**.
 1.  Connect your GitHub repository to **Cloudflare Pages**.
 2.  **Build Command**: `npm run build`
 3.  **Output Directory**: `dist`
-4.  **Environment Variables**: Add `VITE_OPENROUTER_API_KEY`.
-5.  Routing is handled automatically via `public/_redirects`.
+4.  **Environment Variables**:
+    - `VITE_OPENROUTER_API_KEY`: Your OpenRouter key.
+    - `VITE_API_URL`: `https://resume-ai-backend.your-subdomain.workers.dev` (Your actual Worker URL)
 
 ---
 
