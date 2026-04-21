@@ -1,0 +1,38 @@
+{
+  "name": "ai-resume-reviewer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@pinecone-database/pinecone": "^7.2.0",
+    "clsx": "^2.1.0",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^17.4.2",
+    "framer-motion": "^12.38.0",
+    "html2pdf.js": "^0.14.0",
+    "lucide-react": "^0.453.0",
+    "mammoth": "^1.6.0",
+    "openai": "^6.34.0",
+    "pako": "^2.1.0",
+    "pdfjs-dist": "^5.6.205",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "recharts": "^3.8.1",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.8"
+  }
+}
