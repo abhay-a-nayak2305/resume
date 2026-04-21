@@ -1,0 +1,10 @@
+name = "resume-ai-backend"
+main = "src/server.ts"
+compatibility_date = "2024-10-21"
+compatibility_flags = [ "nodejs_compat" ]
+
+[vars]
+NODE_ENV = "production"
+
+# Note: You should add your API keys in the Cloudflare Dashboard Secrets
+# or using 'wrangler secret put KEY_NAME'

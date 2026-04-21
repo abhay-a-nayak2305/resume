@@ -5,9 +5,7 @@ enum LogLevel {
   ERROR = 3
 }
 
-const currentLevel = process.env.LOG_LEVEL 
-  ? LogLevel[process.env.LOG_LEVEL as keyof typeof LogLevel] 
-  : LogLevel.INFO;
+const currentLevel = LogLevel.INFO;
 
 interface LogEntry {
   timestamp: string;

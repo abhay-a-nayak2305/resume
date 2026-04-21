@@ -3,36 +3,31 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.cloudflare.com/)
 
-A privacy-first, powerful AI resume suite that outperforms commercial tools. Built for job seekers who want elite-level analysis without compromising their data.
+A privacy-first, powerful AI resume suite optimized for **Cloudflare's Global Network**. Built for job seekers who want elite-level analysis for free, forever.
 
 ---
 
 ## ✨ Key Features
 
 ### 🔍 AI Resume Reviewer
-- **Privacy-First Parsing**: PDF/DOCX parsing happens entirely in your browser. Your data never leaves your device.
+- **Privacy-First Parsing**: PDF/DOCX parsing happens entirely in your browser.
 * **ATS Compatibility Score**: Get a detailed 0-100 score across 5 critical categories.
-* **Red Flag Detection**: Identify critical issues that get resumes rejected by human recruiters.
-* **RAG-Powered Analysis**: Feedback grounded in a knowledge base of 1000+ successful real-world resumes.
+* **Red Flag Detection**: Identify critical issues that get resumes rejected.
+* **RAG-Powered Analysis**: Feedback grounded in a knowledge base of 1000+ successful resumes.
 
 ### 🎭 Actual ATS Emulator
-See your resume through the "eyes" of the world's most popular systems:
-* **Greenhouse, Lever, Workday, and Taleo** emulation.
-* Discover exactly what text gets dropped or mangled during parsing.
+See your resume through the "eyes" of **Greenhouse, Lever, Workday, and Taleo**.
 
 ### 🎯 Job Matcher
-- **Semantic Alignment**: Compare your resume against any job description with AI.
-* **Keyword Gap Analysis**: Identifies missing concepts, not just missing words.
-* **Actionable Suggestions**: Specific advice on how to rewrite sections to match a specific role.
+- **Semantic Alignment**: Compare your resume against any job description.
+* **Keyword Gap Analysis**: Identifies missing concepts, not just words.
 
 ### ✍️ Smart Resume Generator
-- **Step-by-Step Guidance**: Intuitive form-based builder for Personal Info, Experience, Education, and Skills.
-* **AI Bullet Polish**: Convert simple job descriptions into powerful, quantified achievement statements with one click.
-* **Real-time Preview**: See your professional, ATS-optimized resume take shape as you type.
-* **One-Click Export**: High-quality PDF generation and clipboard copying.
+- **Step-by-Step Guidance**: Intuitive form-based builder.
+* **AI Bullet Polish**: Convert simple descriptions into achievement statements.
+* **Real-time Preview**: See your professional resume take shape as you type.
 
 ---
 
@@ -40,83 +35,43 @@ See your resume through the "eyes" of the world's most popular systems:
 
 | Layer | Technology |
 | :--- | :--- |
-| **Frontend** | React 18, TypeScript, Vite |
-| **Styling** | Tailwind CSS (Glassmorphism & Dark Mode) |
-| **AI Engine** | OpenRouter (LLama 3), OpenAI (Optional) |
-| **Vector DB** | Pinecone (RAG implementation) |
-| **Parsing** | pdf.js, mammoth.js (100% Client-side) |
-| **Visualization** | Recharts |
+| **Frontend** | React 18, Vite |
+| **Backend** | Cloudflare Workers (Hono) |
+| **AI Engine** | OpenRouter (LLama 3) |
+| **Vector DB** | Pinecone |
+| **Hosting** | Cloudflare Pages & Workers |
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Deployment (100% Free)
 
-### Prerequisites
-- Node.js 18+
-- API Keys for OpenRouter (or OpenAI) and Pinecone.
+### 1. Backend: Cloudflare Workers
+The backend is a high-performance Worker built with **Hono**.
+1.  Navigate to `backend/`.
+2.  Install Wrangler: `npm install -g wrangler`.
+3.  Deploy: `wrangler deploy`.
+4.  Add your secrets in the Cloudflare Dashboard:
+    - `OPENAI_API_KEY`
+    - `PINECONE_API_KEY`
+    - `PINECONE_INDEX_NAME`
 
-### Installation
-
-1. **Clone & Install**
-   ```bash
-   git clone https://github.com/your-username/resume-ai.git
-   cd resume-ai
-   npm install
-   ```
-
-2. **Configure Environment**
-   Create a `.env` file in the root:
-   ```env
-   VITE_OPENROUTER_API_KEY=your_key_here
-   VITE_PINECONE_API_KEY=your_key_here
-   VITE_PINECONE_ENVIRONMENT=your_env
-   VITE_PINECONE_INDEX=your_index
-   ```
-
-3. **Run Development**
-   ```bash
-   # Start the backend (proxy)
-   cd backend && npm run dev
-   
-   # Start the frontend (in a new terminal)
-   npm run dev
-   ```
-
----
-
-## 🌐 Deployment
-
-### Frontend (Vercel/Netlify)
-Deploy the root directory as a static site. Vercel is recommended for the best experience.
-
-### Backend (Render/Railway)
-Deploy the `backend` directory as a Node.js web service. Ensure all environment variables are added to the platform's dashboard.
-
-### Production Proxy
-The project includes a `vercel.json` to handle API routing in production. Update the destination URL to point to your hosted backend.
+### 2. Frontend: Cloudflare Pages
+1.  Connect your GitHub repository to **Cloudflare Pages**.
+2.  **Build Command**: `npm run build`
+3.  **Output Directory**: `dist`
+4.  **Environment Variables**: Add `VITE_OPENROUTER_API_KEY`.
+5.  Routing is handled automatically via `public/_redirects`.
 
 ---
 
 ## 🛡 Privacy Guarantee
-We believe your career data is yours alone.
 - ❌ **No** file uploads to our servers.
 - ❌ **No** tracking or analytics.
-- ❌ **No** accounts or emails required.
-- ❌ **No** selling your data to recruiters.
-
----
-
-## 🗺 Roadmap
-- [x] LinkedIn Profile Import
-- [x] Smart Resume Generator
-- [ ] Resume Version Comparison
-- [ ] Recruiter Persona Simulation
-- [ ] Cover Letter Generator
-- [ ] Interview Question Generator
+- ❌ **No** accounts required.
 
 ---
 
 ## 📄 License
-Distributed under the **MIT License**. See `LICENSE` for more information.
+Distributed under the **MIT License**.
 
 Built with ❤️ for the developer community.
